@@ -1,0 +1,26 @@
+.btn-shop{
+
+}
+
+.btn-linkShop{
+    text-decoration: none;
+    color: $color-52586d;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    i{
+        font-size: 1.3rem;
+        color: $color-7b9496;
+        // font-weight: 500;
+    }
+    span{
+        transition: all .5s linear;
+        display: inline-block;
+    }
+    &:hover{
+        color: $color-7b9496;
+        span{
+            transform: translateX(4px);
+        }
+    }
+}

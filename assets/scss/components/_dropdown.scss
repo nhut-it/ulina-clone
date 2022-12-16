@@ -1,0 +1,115 @@
+.dropdown {
+  .sub-menu {
+    background-color: #ecf5f4;
+    border-radius: 10px;
+    padding: 2.3rem 3.5rem;
+    display: none;
+
+    transform-origin: top;
+    transition: all 0.5s;
+  
+
+    .sub-link {
+      margin-bottom: 1.7rem;
+      >a {
+        color: $color-typography;
+        position: relative;
+        display: inline-block;
+        &::after {
+          content: "";
+          width: 0%;
+          height: 1px;
+          display: block;
+          position: absolute;
+          top: 100%;
+          transition: all 0.5s;
+          background-color: $color-9ebbbd;
+        }
+        i{
+            font-size: 1rem;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      &:hover {
+        >a {
+          color: $color-9ebbbd;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+
+     
+    }
+  }
+  &.active {
+    .sub-menu {
+      display: block;
+      animation: fadeSubMenu .5s linear;
+    }
+  }
+  &.active{
+    .sub-link{
+        .mega-menu{
+            display: block;
+        }
+    }
+  }
+  @keyframes fadeSubMenu {
+    from {
+      opacity: 0;
+      transform: rotateX(45deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateX(0);
+    }
+  }
+  @keyframes fadeOutSubMenu {
+    to {
+      opacity: 0;
+    }
+  }
+}
+.sub-dropdown{
+    .mega-menu{
+        padding: 2.3rem 3.5rem;
+        background-color: $color-bg-primary;
+        border-radius: 10px;
+        margin: 2rem 0;
+        display: none;
+        .subi-link{
+          
+            padding-bottom: 1.6rem;
+            a{
+                position: relative;
+                display: inline-block;
+                color: $color-typography;
+
+                &::after {
+                    content: "";
+                    width: 0%;
+                    height: 1px;
+                    display: block;
+                    position: absolute;
+                    top: 100%;
+                    transition: all 0.5s;
+                    background-color: $color-9ebbbd;
+                  }
+            }
+            &:hover{
+                a{
+                    color: $color-9ebbbd;
+                    &::after{
+                        width: 100%;
+                    }
+
+                }
+            }
+            
+        }
+      }
+}

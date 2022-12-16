@@ -1,0 +1,227 @@
+.card{
+    .card-img{
+        overflow: hidden;
+        position: relative;
+        .card-sale{
+            position: absolute;
+            display: flex;
+            top:0 ;
+            z-index: 100;
+            padding: 12px;
+            left: 0;
+            right: 0;
+            justify-content: space-between;
+            span{
+                padding:0 8px;
+                font-size: $fs-12;
+                border-radius: 3px;
+                text-transform: uppercase;
+                line-height: 2.6rem;
+                color: $color-white;
+                &.sale-price{
+                    background-color: $color-f04726;
+                }
+                &.sale{
+                    background-color:$color-7b9496 ;
+                }
+            }
+        }
+        .pi-thumb{
+            // overflow: hidden;
+            img{
+                transition: all 350ms ease;
+                position: relative;
+                right: 0%;
+                z-index: 20;
+                width: 100%;
+                &:last-child{
+                    position: absolute;
+                    top: 0;
+                    left:100%;
+                   
+               }
+            }
+        }
+        .pi-action{
+            display: flex;
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            opacity: 0;
+            transform: translate(-50%,-50%);
+            transition: all .5s ease;
+            a{
+                margin: 0 4px;
+                width: 48px;
+                height: 48px;
+                background-color: $color-white;
+                border-radius: 50%;
+                line-height: 48px;
+                text-align: center;
+                transition: all .5s linear;
+                &:nth-child(1){
+                    transform: translateY(20px);
+                }
+                &:nth-child(2){
+                    transform: translateY(50px);
+                }
+                &:nth-child(3){
+                    transform: translateY(70px);
+                }
+                i{
+                    color: $color-7b9496;
+                }
+                &:hover{
+                    background-color: $color-7b9496;
+                    i{
+                        color: $color-white;
+                    }
+                }
+            }
+            
+        }
+    }
+    .card-header{
+        
+    }
+    .card-body{
+        .card-review{
+            span{
+                i{
+                    font-size: $fs-12;
+                    color: $color-ffb400;
+                    line-height: 1;
+                    margin-right: -5px;
+                }
+                &.quantity-review{
+                    font-size: 1.3rem;
+                    margin-left: 11px;
+                    color: $color-aeb3c3;
+                    line-height: 1;
+                }
+            }
+        }
+        .card-title{
+           font-size: 2.1rem;
+           color: $color-typography;
+           transition: all .5s;
+           &:hover{
+            color: $color-text-primary;
+           }
+        }
+        .card-price{
+            font-size: 2.1rem;
+            font-weight: 500;
+            color: $color-7b9496;
+            margin-bottom: 6px;
+            .price-product{
+                
+            }
+            .card-price-sale{
+                font-size: 1.6rem;
+                color: $color-aeb3c3;
+                text-decoration: line-through;
+                font-weight: 400;
+                padding: 0 6px;
+                margin-left: 2px;
+            }
+            
+        }
+        .card-variations{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            .card-color{
+                label{
+                    cursor: pointer;
+                    width: 18px;
+                    height: 18px;
+                    display: inline-block;
+                    border-radius: 50%;
+                    position: relative;
+                    border: 1px solid transparent;
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        text-align: center;
+                        width: 12px;
+                        height: 12px;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        border-radius: 50%;
+                        display: block;
+                        background-color: red;
+                        transition: all .2s linear;
+                    }
+                    &.blue-color{
+                        &::after{
+
+                            background-color: #52a9e8;
+                        }
+                    }
+                    &.red-color{
+                        &::after{
+
+                            background-color: #f42222;
+                        }
+                    }
+                    &.yellow-color{
+                        &::after{
+
+                            background-color: #f2c864;
+                        }
+                    }
+
+                }
+               
+                input[type='radio']:checked + label{
+                    border-color: #f42222;
+                    &::after{
+                        width: 10px;
+                        height: 10px;
+                    }
+                }
+                
+            }
+            .card-size{
+                label{
+                    cursor: pointer;
+                    padding: 0 6px;
+                    border: 1px solid #dbdfe3;
+                }
+                input:checked + label{
+                    border-color: $color-typography;
+                }
+                input{
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+    &:hover{
+        .card-img{
+            .pi-thumb{
+                opacity: .6;
+                img{
+                    right: 100%;
+                    &:last-child{
+                        display: block;
+                        left: 0%;
+                    }
+                }
+            }
+            .pi-action{
+                top: 50%;
+                opacity: 1;
+                a{
+                    &:nth-child(1),&:nth-child(2),&:nth-child(3){
+                        transform: translateY(0);
+                    }
+                   
+                }
+            }
+        }
+    }
+}
